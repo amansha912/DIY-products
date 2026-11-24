@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 25 60% 97%;
+    --foreground: 0 0% 24%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 24%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 24%;
+
+    --primary: 0 30% 73%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 267 35% 80%;
+    --secondary-foreground: 0 0% 24%;
+
+    --muted: 25 30% 93%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 120 22% 70%;
+    --accent-foreground: 0 0% 24%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 25 20% 88%;
+    --input: 25 20% 88%;
+    --ring: 0 30% 73%;
+
+    --radius: 0.75rem;
+
+    --dusty-rose: 0 30% 73%;
+    --sage: 120 22% 70%;
+    --lavender: 267 35% 80%;
+    --cream: 25 60% 97%;
+    --warm-brown: 20 20% 40%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .craft-divider {
+    @apply w-16 h-0.5 bg-gradient-to-r from-primary via-accent to-secondary mx-auto rounded-full;
+  }
+
+  .craft-btn {
+    @apply inline-flex items-center justify-center px-8 py-3 text-sm tracking-wider uppercase font-body font-medium
+           bg-primary text-primary-foreground rounded-full transition-all duration-300
+           hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .craft-btn-outline {
+    @apply inline-flex items-center justify-center px-8 py-3 text-sm tracking-wider uppercase font-body font-medium
+           border-2 border-primary text-foreground bg-transparent rounded-full transition-all duration-300
+           hover:bg-primary hover:text-primary-foreground;
+  }
+
+  .product-card {
+    @apply cursor-pointer bg-card rounded-2xl overflow-hidden shadow-sm
+           transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1;
+  }
+
+  .product-card-image {
+    @apply overflow-hidden bg-muted;
+  }
+
+  .product-card-image img {
+    @apply w-full h-full object-cover transition-transform duration-500 group-hover:scale-105;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
